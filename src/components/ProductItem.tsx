@@ -22,24 +22,25 @@ const ProductItem = (
 
 const styles = StyleSheet.create({
     container: {
+        flex: 1,
         alignSelf: 'center',
-        width: '90%',
         padding: 15,
-        marginVertical: 10,
         borderRadius: 10,
         backgroundColor: 'white',
         borderColor: 'lightgrey',
         borderWidth: 2,
         justifyContent: 'center',
         alignItems: 'center',
+        height: 250,
     },
     title: {
         fontSize: 20,
         fontWeight: 'bold',
+        textAlign: 'center',
     },
     image: {
-        width: '80%',
-        height: 250,
+        width: '100%',
+        aspectRatio: 1,
     },
 });
 

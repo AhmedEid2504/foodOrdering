@@ -8,6 +8,9 @@ const MenuScreen = () => {
       <FlatList
         data={products}
         style={styles.container}
+        numColumns={2}
+        contentContainerStyle={{gap: 10, padding: 10}}
+        columnWrapperStyle={{gap: 10}}
         renderItem={({ item }) => 
         <ProductItem 
           id={item.id}
