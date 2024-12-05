@@ -13,9 +13,9 @@ const ProductDetail = () => {
     const { id } = useLocalSearchParams();
     const product = products.find((product) => product.id.toString() === id);
     
-    const addToCart = () => {
-        alert(`Added ${product.name} to cart in size ${selectedSize}`);
-    }
+    // const addToCart = () => {
+    //     alert(`Added ${product.name} to cart in size ${selectedSize}`);
+    // }
 
     if (!product) {
         return (
@@ -68,7 +68,7 @@ const ProductDetail = () => {
                     <Text style={styles.title}>${product.price}</Text>
                     <Button 
                         text="Add to cart" 
-                        onPress={addToCart}
+                        // onPress={addToCart}
                     />
                 </View>
             </View>
