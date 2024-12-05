@@ -1,6 +1,8 @@
 import { View, FlatList, StyleSheet } from 'react-native';
 import ProductItem from '@components/ProductItem';
 import products from '@assets/data/products';
+import { StatusBar } from 'expo-status-bar';
+import { Platform } from 'react-native';
 const MenuScreen = () => {
 
   return (
@@ -20,6 +22,7 @@ const MenuScreen = () => {
         />}
         keyExtractor={({ id }) => id.toString()}
       />
+      <StatusBar style={Platform.OS === 'ios' ? 'light' : 'dark'} />
     </View>
   );
 }
