@@ -1,21 +1,22 @@
-import { View, ScrollView, StyleSheet } from 'react-native';
-import products from '@/assets/data/products';
-import ProductItem from '@/src/components/ProductItem';
-
+import { View, FlatList, StyleSheet } from 'react-native';
+import ProductItem from '@components/ProductItem';
+import products from '@assets/data/products';
 const MenuScreen = () => {
 
   return (
     <View style={styles.wrapper}>
-      <ScrollView style={styles.container}>
-        {products.map((product) => (
-          <ProductItem 
-            key={product.id} 
-            name={product.name}
-            image={product.image}
-            price={product.price}
-          />
-        ))}
-      </ScrollView>
+      <FlatList
+        data={products}
+        style={styles.container}
+        renderItem={({ item }) => 
+        <ProductItem 
+          id={item.id}
+          name={item.name}
+          image={item.image}
+          price={item.price}
+        />}
+        keyExtractor={({ id }) => id.toString()}
+      />
     </View>
   );
 }

@@ -1,7 +1,8 @@
 import { View, Text, StyleSheet, Image } from 'react-native';
-import products from '@/assets/data/products';
+export const defaultPizzaImage = 'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/food/defaut.png';
 
 type Product = {
+    id: number;
     name: string;
     image: string;
     price: number;
@@ -12,7 +13,7 @@ const ProductItem = (
 ) => {
     return (
         <View style={styles.container}>
-            <Image style={styles.image} source={{ uri: Product.image }} />
+            <Image style={styles.image} source={{ uri: Product.image || defaultPizzaImage }} />
             <Text style={styles.title}>{Product.name}</Text>
             <Text style={styles.title}>{Product.price}</Text>
         </View>
